@@ -1,0 +1,47 @@
+# Request_Basic_1
+
+#### HTTP Cookie
+
+* A record book of hypertext (HTTP) that refers to a small file of historical information installed on an Internet user's computer through the server that the site is using when he or she visits a website.
+* HTTP cookies, web cookies, or browser cookies. The information contained in the recording file is read each time an Internet user visits the same website and is frequently replaced with new information.
+
+#### daum.net Cookie
+
+<img width="600" src="https://user-images.githubusercontent.com/44635266/61995310-b1d1bc80-b0c1-11e9-86fc-86c6d55bb166.png">
+
+* Testing httpbin.org
+
+<img width="600" src="https://user-images.githubusercontent.com/44635266/61995513-8f8d6e00-b0c4-11e9-94fd-99c1c8c46973.png">
+
+```
+> Section4-1.py
+
+import requests
+
+with requests.Session() as s:
+    pass
+    r = s.get('https://www.daum.net')
+    #print(r.text)
+
+r = s.get('http://httpbin.org/cookies',
+          cookies={
+              'name': 'has3ong',
+              'url' : 'https://github.com/Has3ong/'
+          })
+
+print(r.text)
+
+r = s.get('http://httpbin.org/cookies/set',
+          cookies={
+              'name': 'has3ong',
+              'url': 'https://github.com/Has3ong/'
+          })
+
+print(r.text)
+
+url = 'http://httpbin.org/get'
+headers = {'user-agent': 'has3ong'}
+
+r = s.get(url, headers=headers)
+print(r.text)
+```
