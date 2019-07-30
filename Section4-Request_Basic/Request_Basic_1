@@ -7,11 +7,16 @@
 
 #### daum.net Cookie
 
-<img width="600" src="https://user-images.githubusercontent.com/44635266/61995310-b1d1bc80-b0c1-11e9-86fc-86c6d55bb166.png">
+<img width="600" src="https://user-images.githubusercontent.com/44635266/61995310-b1d1bc80-b0c1-11e9-86fc-86c6d55bb166.png"/>
 
 * Testing httpbin.org
 
-<img width="600" src="https://user-images.githubusercontent.com/44635266/61995513-8f8d6e00-b0c4-11e9-94fd-99c1c8c46973.png">
+<img width="600" src="https://user-images.githubusercontent.com/44635266/61995513-8f8d6e00-b0c4-11e9-94fd-99c1c8c46973.png"/>
+
+#### Python Requests
+
+* The requests library is the de facto standard for making HTTP requests in Python.
+* It abstracts the complexities of making requests behind a beautiful, simple API so that you can focus on interacting with services and consuming data in your application.
 
 ```
 > Section4-1.py
@@ -20,28 +25,28 @@ import requests
 
 with requests.Session() as s:
     pass
-    r = s.get('https://www.daum.net')
-    #print(r.text)
+    request = s.get('https://www.daum.net')
+    #print(request.text)
 
-r = s.get('http://httpbin.org/cookies',
+request = s.get('http://httpbin.org/cookies',
           cookies={
               'name': 'has3ong',
               'url' : 'https://github.com/Has3ong/'
           })
 
-print(r.text)
+print(request.text)
 
-r = s.get('http://httpbin.org/cookies/set',
+request = s.get('http://httpbin.org/cookies/set',
           cookies={
               'name': 'has3ong',
               'url': 'https://github.com/Has3ong/'
           })
 
-print(r.text)
+print(request.text)
 
 url = 'http://httpbin.org/get'
 headers = {'user-agent': 'has3ong'}
 
-r = s.get(url, headers=headers)
-print(r.text)
+request = s.get(url, headers=headers)
+print(request.text)
 ```

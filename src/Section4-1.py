@@ -2,30 +2,30 @@ import requests
 
 with requests.Session() as s:
     pass
-    r = s.get('https://www.daum.net')
-    #print(r.text)
+    request = s.get('https://www.daum.net')
+    #print(request.text)
 
-r = s.get('http://httpbin.org/cookies',
+request = s.get('http://httpbin.org/cookies',
           cookies={
               'name': 'has3ong',
               'url' : 'https://github.com/Has3ong/'
           })
 
-print(r.text)
+print(request.text)
 
-r = s.get('http://httpbin.org/cookies/set',
+request = s.get('http://httpbin.org/cookies/set',
           cookies={
               'name': 'has3ong',
               'url': 'https://github.com/Has3ong/'
           })
 
-print(r.text)
+print(request.text)
 
 url = 'http://httpbin.org/get'
 headers = {'user-agent': 'has3ong'}
 
-r = s.get(url, headers=headers)
-print(r.text)
+request = s.get(url, headers=headers)
+print(request.text)
 
 
 
