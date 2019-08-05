@@ -1,5 +1,10 @@
 # Crawling_Basic_1
 
+#### Runtime Enviroment
+```
+macOS Mojave 10.14.5
+```
+
 #### Crawling vs Scraping
 ##### Scraping
 * A technology that automatically extracts and collects information located on a desired part of a website on a computer
